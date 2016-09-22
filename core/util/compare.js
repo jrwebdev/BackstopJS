@@ -34,7 +34,7 @@ function compareImage (referencePath, testPath) {
       reject('Test image not found: ' + testPath);
     }
 
-    resemble(referencePath).compareTo(testPath)
+    resemble(referencePath).compareTo(testPath).ignoreAntialiasing()
       .onComplete(function (data) {
         resolve(data);
       });
